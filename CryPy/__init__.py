@@ -35,6 +35,10 @@ def read_camera(location, load_all=False):
 
 #############################
 def get_Max_Trace(reader):
+    max_img = reader[0]
+    for frame in reader:
+        frame[frame > 50000] = np.mean(frame)
+        max_img = np.max([max_img, frame], axis=0)
     return np.max(reader, axis=0)
 
 
@@ -57,9 +61,8 @@ def find_mols(data, neighborhood_size, threshold):
     return np.array(x, dtype=np.uint8), np.array(y,dtype=np.uint8)
 
 
-
 #############################
-def measure_noise(reader, x=20, y=20):
+def measure_noise(reader, x=50, y=50):
     mean = np.mean(reader[100:1000, x, y])
     print("mean value = %.2f" %(mean) )
     std = np.std(reader[100:1000, x, y])
@@ -79,12 +82,25 @@ def add_patches_to_img(ax, molx, moly):
 
 
 #############################
-def plot_mols_spectrum(data, reader, molx, moly):
+def get_mols_spectrum(data, reader, molx, moly, bin=2):
     n = molx.size
     print('Plotting {} molecules spectrum...'.format(n))
     for i in range (0,n):
-        fluor_trace = np.mean(np.mean(reader[:, moly[i]-2 : moly[i]+2, molx[i]-2 : molx[i]+2], axis=1), axis=1)
+        fluor_trace = np.mean(np.mean(reader[:, moly[i]-1 : moly[i]+1, molx[i]-1 : molx[i]+1], axis=1), axis=1)
         data['mol'+str(i)] = fluor_trace
+
+    data.to_csv('Molecules_Fluorescence_Trace.csv')
+    print('All molecules fluorescence trace saved in the CSV file.\n Data now contains the molecules ...')
+
+
+#############################
+def plot_mols(data, n):
+    fig, ax = plt.subplots(1)
+    for i in range (0,n):
+        plt.plot(data.Frequency/1e9,(data['mol'+ str(i)] + i*10000)/10000, label='mol'+ str(i) )
+        plt.show()
+    plt.xlabel('Frequency/GHz')
+    plt.ylabel('Fluorescence/A.U.')
 
 
 def plot_tera(new_data,reader,center=(5,5),rngs=(3,3),save_name="tera_scan"):
