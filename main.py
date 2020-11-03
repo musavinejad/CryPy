@@ -11,6 +11,9 @@ from pylablib.core.fileio import loadfile, savefile
 import scipy.ndimage as ndimage
 import scipy.ndimage.filters as filters
 from CryPy import *
+import matplotlib
+
+
 
 ############     constants:
 
@@ -40,9 +43,9 @@ if __name__ == '__main__':
     ax.imshow(max_img)
     os.chdir(folder + r'\DataOutput')
     fig.savefig(r'Maxtrace.png')
-    molx, moly = find_mols(max_img, neighborhood_size=5, threshold=mean_BG + 1* STD_BG)
-    molx[1] = 63
-    moly[1] = 58
+    molx, moly = find_mols(max_img, neighborhood_size=5, threshold=mean_BG + STD_BG)
+    #molx[1] = 63
+    #moly[1] = 58
     add_patches_to_img(ax, molx, moly)  ## Adds rectangles around the molecules
     fig.savefig(r'Maxtrace_withMolecules.png')
     ### max trace image is saved. ,molx/y contains the coordinates of possible molecules
@@ -50,5 +53,4 @@ if __name__ == '__main__':
     get_mols_spectrum(data, reader, molx, moly)
 
     #data=data.sort_values(by=['Frequency'])
-    plot_mols(data, molx.size)
-
+    #plot_mols(data, molx.size)
