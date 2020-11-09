@@ -43,14 +43,16 @@ if __name__ == '__main__':
     ax.imshow(max_img)
     os.chdir(folder + r'\DataOutput')
     fig.savefig(r'Maxtrace.png')
-    molx, moly = find_mols(max_img, neighborhood_size=5, threshold=mean_BG + STD_BG)
-    #molx[1] = 63
-    #moly[1] = 58
+    molx, moly = find_mols(max_img, neighborhood_size=5, threshold=6* STD_BG)
+    #molx[1] = 46
+    #moly[1] = 81
+    #molx = np.array([82])
+    #moly = np.array([70])
     add_patches_to_img(ax, molx, moly)  ## Adds rectangles around the molecules
     fig.savefig(r'Maxtrace_withMolecules.png')
     ### max trace image is saved. ,molx/y contains the coordinates of possible molecules
 
     get_mols_spectrum(data, reader, molx, moly)
 
-    #data=data.sort_values(by=['Frequency'])
-    #plot_mols(data, molx.size)
+    data=data.sort_values(by=['Frequency'])
+    plot_mols(data, molx.size)

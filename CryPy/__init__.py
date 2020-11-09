@@ -86,7 +86,7 @@ def get_mols_spectrum(data, reader, molx, moly, bin=2):
     n = molx.size
     print('Plotting {} molecules spectrum...'.format(n))
     for i in range (0,n):
-        fluor_trace = np.mean(np.mean(reader[:, moly[i]-1 : moly[i]+1, molx[i]-1 : molx[i]+1], axis=1), axis=1)
+        fluor_trace = np.mean(np.max(reader[:, moly[i]-2 : moly[i]+3, molx[i]-2 : molx[i]+3], axis=1), axis=1)
         data['mol'+str(i)] = fluor_trace
 
     data.to_csv('Molecules_Fluorescence_Trace.csv')
@@ -101,6 +101,7 @@ def plot_mols(data, n):
         plt.show()
     plt.xlabel('Frequency/GHz')
     plt.ylabel('Fluorescence/A.U.')
+    fig.savefig(r'MoleculesFluorescence.png')
 
 
 def plot_tera(new_data,reader,center=(5,5),rngs=(3,3),save_name="tera_scan"):
