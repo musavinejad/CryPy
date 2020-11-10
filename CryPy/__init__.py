@@ -13,21 +13,12 @@ import scipy.ndimage as ndimage
 import scipy.ndimage.filters as filters
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+from random import randint as rnd
 
 #############################
-def select_data():
-    files = pd.DataFrame()
-    ff = glob.glob("Data/*.cam")
-    files['name'] = ff
-    print(files)
-    print('Select your data by index :')
-    a = int(input())
-    return files.name[a]
 
-
-#############################
 def read_camera(location, load_all=False):
-    reader = cam.CamReader(location)
+    reader = cam.CamReader(location,same_size=True)
     if load_all:
         reader = reader.read_all()
     return reader
@@ -35,9 +26,10 @@ def read_camera(location, load_all=False):
 
 #############################
 def get_Max_Trace(reader):
+    threshhold = 40000
     max_img = reader[0]
     for frame in reader:
-        frame[frame > 50000] = np.mean(frame)
+        frame[frame > threshhold] = np.mean(frame)
         max_img = np.max([max_img, frame], axis=0)
     return np.max(reader, axis=0)
 
@@ -62,10 +54,24 @@ def find_mols(data, neighborhood_size, threshold):
 
 
 #############################
-def measure_noise(reader, x=50, y=50):
-    mean = np.mean(reader[100:1000, x, y])
-    print("mean value = %.2f" %(mean) )
-    std = np.std(reader[100:1000, x, y])
+
+
+def measure_noise(reader):
+    rndframes = []
+    sampleCam = []
+    mx = reader.size()
+    x , y = reader[0].shape
+    x , y = x//2, y//2
+    for i in range(1, 100):
+        rndframes.append(rnd(1,mx))
+    #print(rndframes)
+
+    for frame in rndframes:
+        sampleCam.append(reader[frame][x,y])
+
+    mean = np.mean(sampleCam)
+    print("mean background is = %.2f" %(mean) )
+    std = np.std(sampleCam)
     print("Background STD = %.2f" % (std))
     return float(mean), float(std)
 
@@ -82,26 +88,26 @@ def add_patches_to_img(ax, molx, moly):
 
 
 #############################
-def get_mols_spectrum(data, reader, molx, moly, bin=2):
+def get_mols_spectrum(data, reader, molx, moly, molname ,bin=2):
     n = molx.size
     print('Plotting {} molecules spectrum...'.format(n))
     for i in range (0,n):
         fluor_trace = np.mean(np.max(reader[:, moly[i]-2 : moly[i]+3, molx[i]-2 : molx[i]+3], axis=1), axis=1)
         data['mol'+str(i)] = fluor_trace
 
-    data.to_csv('Molecules_Fluorescence_Trace.csv')
+    data.to_csv(molname + '_DataOutPut\\' + molname +'_Fluorescence_Trace.csv')
     print('All molecules fluorescence trace saved in the CSV file.\n Data now contains the molecules ...')
 
 
 #############################
-def plot_mols(data, n):
+def plot_mols(data, n, molname):
     fig, ax = plt.subplots(1)
     for i in range (0,n):
         plt.plot(data.Frequency/1e9,(data['mol'+ str(i)] + i*10000)/10000, label='mol'+ str(i) )
         plt.show()
     plt.xlabel('Frequency/GHz')
     plt.ylabel('Fluorescence/A.U.')
-    fig.savefig(r'MoleculesFluorescence.png')
+    fig.savefig(molname + '_DataOutPut\\' + molname +r'MoleculesFluorescence.png')
 
 
 def plot_tera(new_data,reader,center=(5,5),rngs=(3,3),save_name="tera_scan"):
@@ -129,3 +135,5 @@ def plot_tera(new_data,reader,center=(5,5),rngs=(3,3),save_name="tera_scan"):
     f.savefig(path,dpi=300)
     np.savetxt(save_name+"raw.txt" , data , delimiter=',')
     mpl.close(f)
+
+
