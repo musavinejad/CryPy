@@ -20,7 +20,7 @@ from CryPy.SignalProcessing import *
 ########################################
 ## input documentation names :
 
-molname = '751-58nm_LPat780Tilted800_ND6_24mV_Fine500MHzps'
+molname = 'M76876NC5'
 
 #########################################
 
