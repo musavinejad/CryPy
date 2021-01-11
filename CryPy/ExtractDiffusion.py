@@ -12,7 +12,9 @@ name = 'M78296NC5_Fluorescence_Trace'
 from functools import partial
 
 
-def lorentzian(f, f0, BG, FWHM, A):
+# from CryPy.FitedDifMap import lorentzian
+
+def lorentzian(f, f0, BG, FWHM, A:'Fluorescence Intensity'):
     a = FWHM ** 2 / 2
     L = BG + A * a / (a + (f - f0) ** 2)
     return L
@@ -24,9 +26,9 @@ def fit_Line(f, y, model, params):
     return result.params
 
 
-def fitted_Dif_map(data, mol='mol0', df=0.05, dt=1, molname='__', mean_BG='3000'):
+def fitted_Dif_map(data, mol='mol0', df:'Frequency Resolution'=0.05, dt:"time resolution"=1, molname='__', mean_BG='3000'):
     data['f'] = (data.Frequency - data.Frequency.mean()) / 1e9
-
+    log = pd.DataFrame(columns=["t", "FWHM", "f0", "BG", "A"])
     fmin = data.f.min()
     fmax = data.f.max()
 
@@ -44,13 +46,25 @@ def fitted_Dif_map(data, mol='mol0', df=0.05, dt=1, molname='__', mean_BG='3000'
     params.add('A', value=1000)
     params.add("f0", value=3)
     params.add("FWHM", value=2, min=0.5, max=3)
-    params.add('BG', value=mean_BG, min=0, max=20000)
+    params.add('BG', value=int(mean_BG), min=0, max=20000)
 
     for n in range(ypix - 1):
-        T = (data.t > dt * n) & (data.t < dt * n + dt)
+        ''' Here the data is parsed to different time sectiones and each section
+        is fitted with a lorentzian function. the data is stored in dmap and later
+        plotted. Fit parameters are saved in log. "A" is the brightness before 
+        caliberation of the camera.'''
+        t = dt * n
+        T = (data.t > t) & (data.t < t + dt)
         ldata = data[T]
         newParams = fit_Line(ldata.f, ldata.mol0, model, params)
         params = newParams.copy()
+        A = newParams['A'].value
+        BG = newParams['BG'].value
+        fwhm = newParams['FWHM'].value
+        f0 = newParams['f0'].value
+
+        log = log.append({"t": t, "FWHM": fwhm, "BG": BG, "f0": f0, "A": A}, ignore_index=True)
+
         newParams['A'].value = 1  # normalizing each line. the intensity does not matter this way
         newParams['BG'].value = 0
         dmap[:, n] = model.eval(newParams, f=f)
@@ -66,6 +80,7 @@ def fitted_Dif_map(data, mol='mol0', df=0.05, dt=1, molname='__', mean_BG='3000'
     ax.set_ylabel('Time (s)')
     fig.colorbar(c, ax=ax)
     plt.show()
+    return log
 
 
 def Extract_diffusion(data, mol='mol0', df=0.5, dt=1, molname='__', mean_BG='3000'):

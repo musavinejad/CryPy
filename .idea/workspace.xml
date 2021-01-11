@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5deab80b-0bb5-4206-b253-7c3792b4be24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/01_1.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CryPy/FitedDifMap.pyx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CryPy/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CryPy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CryPy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CryPy/ExtractDiffusion.py" beforeDir="false" afterPath="$PROJECT_DIR$/CryPy/ExtractDiffusion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CryPy/SignalProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/CryPy/SignalProcessing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CryPy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CryPy/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FittingLorentzian.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/FittingLorentzian.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,22 +22,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/musavinejad/CryPy.git" />
+      </set>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="95347f97-b54b-4ec6-96a1-95d56920779a">
+    <option name="files">
+      <option value="01_1.ipynb" />
+    </option>
+  </component>
   <component name="ProjectId" id="1jYYwr6TSg5OyTqMVwhJxj3rgqv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python Gui/master-blank_withGalvoUpdated" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="ExtractDiffusion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -46,6 +73,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CryPy/ExtractDiffusion.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
@@ -67,6 +95,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="main" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
@@ -76,15 +105,63 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="CryPy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CryPy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../DeleteME/STMData" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../DeleteME/STMData/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CryPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
@@ -96,16 +173,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.WithPythonConsole" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.ExtractDiffusion" />
+      <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.ExtractDiffusion" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -116,45 +196,153 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604411771889</updated>
+      <workItem from="1605612801335" duration="445000" />
+      <workItem from="1605689193001" duration="712000" />
+      <workItem from="1605689948559" duration="675000" />
+      <workItem from="1605779870073" duration="5950000" />
+      <workItem from="1605963585728" duration="9119000" />
+      <workItem from="1606230514301" duration="926000" />
+      <workItem from="1606300954180" duration="286000" />
+      <workItem from="1606386271820" duration="3605000" />
+      <workItem from="1606929494174" duration="287000" />
+      <workItem from="1606994365353" duration="475000" />
+      <workItem from="1606994858897" duration="4671000" />
+      <workItem from="1607352155134" duration="617000" />
+      <workItem from="1610283995990" duration="732000" />
+      <workItem from="1610287313462" duration="6208000" />
+      <workItem from="1610358940345" duration="5967000" />
     </task>
+    <task id="LOCAL-00001" summary="OSfunc added_ PyCharm Lab">
+      <created>1605351541282</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605351541282</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ExtractDiffusion back to complete!">
+      <created>1605352034368</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605352034368</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="OSfunc added_ PyCharm Lab" />
+    <MESSAGE value="ExtractDiffusion back to complete!" />
+    <option name="LAST_COMMIT_MESSAGE" value="ExtractDiffusion back to complete!" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604423490223">
+    <state x="552" y="243" key="#Inspections" timestamp="1605351629518">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="552" y="243" key="#Inspections/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1605351629518" />
+    <state x="414" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605690573967">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="414" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604423490223" />
-    <state width="618" height="1042" key="GridCell.Tab.0.bottom" timestamp="1604423491860">
+    <state x="414" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170@0.0.1920.1170" timestamp="1605690573967" />
+    <state x="614" y="179" key="CommitChangelistDialog2" timestamp="1605352033810">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state x="614" y="179" key="CommitChangelistDialog2/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1605352033810" />
+    <state x="62" y="48" width="1736" height="986" key="DiffContextDialog" timestamp="1605351991224">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="62" y="48" width="1736" height="986" key="DiffContextDialog/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1605351991224" />
+    <state x="740" y="340" key="FileChooserDialogImpl" timestamp="1606994873252">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="740" y="340" key="FileChooserDialogImpl/0.0.1920.1170/1920.0.1680.1020/3600.0.1280.994@0.0.1920.1170" timestamp="1606994873252" />
+    <state x="740" y="340" key="FileChooserDialogImpl/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1605351945361" />
+    <state x="740" y="340" key="FileChooserDialogImpl/0.0.1920.1170@0.0.1920.1170" timestamp="1605797544646" />
+    <state width="1877" height="400" key="GridCell.Tab.0.bottom" timestamp="1605696045595">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
     <state width="618" height="1042" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604423491860" />
-    <state width="618" height="1042" key="GridCell.Tab.0.center" timestamp="1604423491860">
+    <state width="1877" height="400" key="GridCell.Tab.0.center" timestamp="1605696045595">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state width="1877" height="400" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
     <state width="618" height="1042" key="GridCell.Tab.0.center/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604423491860" />
-    <state width="618" height="1042" key="GridCell.Tab.0.left" timestamp="1604423491860">
+    <state width="1877" height="400" key="GridCell.Tab.0.left" timestamp="1605696045595">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state width="1877" height="400" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
     <state width="618" height="1042" key="GridCell.Tab.0.left/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604423491860" />
-    <state width="618" height="1042" key="GridCell.Tab.0.right" timestamp="1604423491860">
+    <state width="1877" height="400" key="GridCell.Tab.0.right" timestamp="1605696045595">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state width="1877" height="400" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
     <state width="618" height="1042" key="GridCell.Tab.0.right/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604423491860" />
-    <state x="184" y="99" key="MergeDialog" timestamp="1604418937456">
+    <state width="1877" height="400" key="GridCell.Tab.1.bottom" timestamp="1605696045595">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.bottom/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
+    <state width="1877" height="400" key="GridCell.Tab.1.center" timestamp="1605696045595">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.center/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
+    <state width="1877" height="400" key="GridCell.Tab.1.left" timestamp="1605696045595">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.left/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
+    <state width="1877" height="400" key="GridCell.Tab.1.right" timestamp="1605696045595">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.right/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605696045595" />
+    <state x="184" y="99" key="MergeDialog" timestamp="1610286328720">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="184" y="99" key="MergeDialog/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604418937456" />
+    <state x="184" y="99" key="MergeDialog/1920.0.1920.1170/0.0.1920.1170@0.0.1920.1170" timestamp="1610286328720" />
     <state x="672" y="301" key="MultipleFileMergeDialog" timestamp="1604418937462">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="672" y="301" key="MultipleFileMergeDialog/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604418937462" />
-    <state x="576" y="543" key="com.intellij.ide.util.TipDialog" timestamp="1605351304880">
+    <state x="739" y="307" key="RollbackChangesDialog" timestamp="1605352051412">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state x="739" y="307" key="RollbackChangesDialog/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1605352051412" />
+    <state x="162" y="116" width="1542" height="962" key="SettingsEditor" timestamp="1605967719487">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="162" y="116" width="1542" height="962" key="SettingsEditor/0.0.1920.1170@0.0.1920.1170" timestamp="1605967719487" />
+    <state x="552" y="318" key="Vcs.Push.Dialog.v2" timestamp="1605352067749">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="552" y="318" key="Vcs.Push.Dialog.v2/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1605352067749" />
+    <state x="576" y="543" key="com.intellij.ide.util.TipDialog" timestamp="1608049561674">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="576" y="543" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.0.1280.994/3200.0.1280.994@0.0.1920.1170" timestamp="1605884198841" />
+    <state x="576" y="543" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.0.1680.1020/3600.0.1280.994@0.0.1920.1170" timestamp="1608049561674" />
     <state x="576" y="543" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1605351304880" />
-    <state x="769" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604418965887">
+    <state x="576" y="543" key="com.intellij.ide.util.TipDialog/0.0.1920.1170@0.0.1920.1170" timestamp="1605690635907" />
+    <state x="576" y="543" key="com.intellij.ide.util.TipDialog/1920.0.1920.1170/0.0.1920.1170@0.0.1920.1170" timestamp="1608043897343" />
+    <state x="769" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610287638183">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state x="769" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1170/1920.0.1680.1020/3600.0.1280.994@0.0.1920.1170" timestamp="1607010264968" />
     <state x="769" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1170/1920.33.1280.994@0.0.1920.1170" timestamp="1604418965887" />
+    <state x="769" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1170/0.0.1920.1170@0.0.1920.1170" timestamp="1610287638183" />
   </component>
 </project>
